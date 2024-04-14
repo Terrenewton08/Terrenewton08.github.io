@@ -8,22 +8,22 @@
     <title>08189 Systems Corp.</title>
 </head>
 <style>
-    h1{
+    h1 {
         font-family: 'Courier New', Courier, monospace; 
     }
     p {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: justify;
-    font-size: 105%;
-    letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
-    word-spacing: 2px; /* Ajusta el espaciado entre palabras */
+        font-family: 'Courier New', Courier, monospace;
+        text-align: justify;
+        font-size: 105%;
+        letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
+        word-spacing: 2px; /* Ajusta el espaciado entre palabras */
     }
-    pp{
+    pp {
         font-family: Arial, sans-serif;
         text-align: center;
         size: 5px;
     }
-    ul{
+    ul {
         font-family: 'Courier New', Courier, monospace;
     }
     .reloj {
@@ -45,7 +45,7 @@
         </ul>
     </nav>
     <center><h1>¡Bienvenido a 08189 Systems Corporation!</h1></center>
-    <strong><div class="reloj" id="europa">Hora de Europa: </div></strong>
+    <strong><div class="reloj" id="europa">Hora de Europa (Estándar): </div></strong>
     <strong><div class="reloj" id="asia">Hora de Asia: </div></strong>
     <strong><div class="reloj" id="america">Hora de América: </div></strong>
     <strong><div class="reloj" id="londres">Hora de Londres: </div></strong>
@@ -58,13 +58,13 @@
     <script>
         function actualizarRelojes() {
             // Obtenemos la hora actual en diferentes zonas horarias
-            const horaEuropa = new Date().toLocaleTimeString('es-ES', { timeZone: 'Europe/Madrid' });
-            const horaAsia = new Date().toLocaleTimeString('es-ES', { timeZone: 'Asia/Tokyo' });
-            const horaAmerica = new Date().toLocaleTimeString('es-ES', { timeZone: 'America/New_York' });
-            const horaLondres = new Date().toLocaleTimeString('es-ES', { timeZone: 'Europe/London' });
+            const horaEuropa = new Date().toLocaleTimeString('es-ES', { timeZone: 'Europe/Madrid', timeZoneName: 'short' });
+            const horaAsia = new Date().toLocaleTimeString('es-ES', { timeZone: 'Asia/Tokyo', timeZoneName: 'short' });
+            const horaAmerica = new Date().toLocaleTimeString('es-ES', { timeZone: 'America/New_York', timeZoneName: 'short' });
+            const horaLondres = new Date().toLocaleTimeString('es-ES', { timeZone: 'Europe/London', timeZoneName: 'short' });
 
             // Actualizamos los relojes en la página
-            document.getElementById('europa').textContent = `Hora de Europa: ${horaEuropa}`;
+            document.getElementById('europa').textContent = `Hora de Europa (Estándar): ${horaEuropa}`;
             document.getElementById('asia').textContent = `Hora de Asia: ${horaAsia}`;
             document.getElementById('america').textContent = `Hora de América: ${horaAmerica}`;
             document.getElementById('londres').textContent = `Hora de Londres: ${horaLondres}`;
