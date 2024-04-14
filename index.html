@@ -26,6 +26,13 @@
     ul{
         font-family: 'Courier New', Courier, monospace;
     }
+    .reloj {
+        text-align: left;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: rgb(64, 68, 68);
+    }
 </style>
 <body>
     <nav>
@@ -38,11 +45,36 @@
         </ul>
     </nav>
     <center><h1>¡Bienvenido a 08189 Systems Corporation!</h1></center>
+    <strong><div class="reloj" id="europa">Hora de Europa: </div></strong>
+    <strong><div class="reloj" id="asia">Hora de Asia: </div></strong>
+    <strong><div class="reloj" id="america">Hora de América: </div></strong>
+    <strong><div class="reloj" id="londres">Hora de Londres: </div></strong>
     <footer>
         <!-- Pie de página -->
         <pp>Derechos de autor &copy; 2024</pp>
         <br>
         <pp>Isaac Pérez Rodríguez & 08189 Systems Corp.</pp>
     </footer>
+    <script>
+        function actualizarRelojes() {
+            // Obtenemos la hora actual en diferentes zonas horarias
+            const horaEuropa = new Date().toLocaleTimeString('es-ES', { timeZone: 'Europe/Madrid' });
+            const horaAsia = new Date().toLocaleTimeString('es-ES', { timeZone: 'Asia/Tokyo' });
+            const horaAmerica = new Date().toLocaleTimeString('es-ES', { timeZone: 'America/New_York' });
+            const horaLondres = new Date().toLocaleTimeString('es-ES', { timeZone: 'Europe/London' });
+
+            // Actualizamos los relojes en la página
+            document.getElementById('europa').textContent = `Hora de Europa: ${horaEuropa}`;
+            document.getElementById('asia').textContent = `Hora de Asia: ${horaAsia}`;
+            document.getElementById('america').textContent = `Hora de América: ${horaAmerica}`;
+            document.getElementById('londres').textContent = `Hora de Londres: ${horaLondres}`;
+        }
+
+        // Actualizamos los relojes cada segundo
+        setInterval(actualizarRelojes, 1000);
+
+        // Llamamos a la función para actualizar los relojes cuando la página se carga por primera vez
+        window.onload = actualizarRelojes;
+    </script>
 </body>
 </html>
