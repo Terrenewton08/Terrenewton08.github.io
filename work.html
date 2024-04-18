@@ -85,6 +85,49 @@
     <div class="dias-habiles" id="dias-habiles"></div>
     <strong><p>Si haces click en el siguiente boton, podrás acceder a nuestro cifrador/descifrador César. Con el podras cibrar textos, palabras, nombres, etc.</p></strong>
     <center><button class="button" onclick="window.location.href = 'cifrador.html';">Cifrador César</button></center>
+    <script>
+        // Función para calcular la cuenta regresiva y actualizar la página
+        function actualizarCuentaRegresiva() {
+            // Definir la fecha objetivo (21 de junio de 2024)
+            const fechaObjetivo = new Date('June 21, 2024 00:00:00').getTime();
+
+            // Obtener la fecha actual
+            const ahora = new Date().getTime();
+
+            // Calcular la diferencia de tiempo entre la fecha objetivo y la fecha actual
+            const diferencia = fechaObjetivo - ahora;
+
+            // Calcular los días, horas, minutos y segundos restantes
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            // Actualizar el elemento HTML con la cuenta regresiva
+            document.getElementById('cuenta-regresiva').innerHTML = `Faltan: ${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
+
+            // Calcular los días hábiles restantes (sin contar los fines de semana)
+            const fechaActual = new Date();
+            let diasHabiles = 0;
+            for (let i = 1; i <= dias; i++) {
+                // Verificar si el día actual es un día hábil (de lunes a viernes)
+                if (fechaActual.getDay() !== 0 && fechaActual.getDay() !== 6) {
+                    diasHabiles++;
+                }
+                // Avanzar al siguiente día
+                fechaActual.setDate(fechaActual.getDate() + 1);
+            }
+
+            // Actualizar el elemento HTML con los días hábiles restantes
+            document.getElementById('dias-habiles').innerHTML = `Faltan ${diasHabiles} días hábiles para el 21/6/2024`;
+        }
+
+        // Actualizar la cuenta regresiva cada segundo
+        setInterval(actualizarCuentaRegresiva, 1000);
+
+        // Llamar a la función para calcular la cuenta regresiva cuando se cargue la página
+        window.onload = actualizarCuentaRegresiva;
+    </script>
     <footer>
         <!-- Pie de página -->
         <pp>Derechos de autor &copy; 2024</pp>
