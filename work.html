@@ -51,6 +51,25 @@
         word-spacing: 2px; /* Ajusta el espaciado entre palabras */
         color: rgb(0, 255, 76);
     }
+            /* Estilo para el botón */
+            .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        /* Estilo para el botón al pasar el cursor */
+        .button:hover {
+            background-color: #45a049;
+        }
 </style>
 <body>
     <nav>
@@ -115,7 +134,8 @@
         // Llamar a la función para calcular la cuenta regresiva cuando se cargue la página
         window.onload = actualizarCuentaRegresiva;
     </script>
-    <strong><p>Si haces click en el siguiente botón, podrás acceder a nuestro cifrador/descifrador César. Con el podras cibrar textos, palabras, nombres, etc.</p></strong>
-    <center><button onclick="window.location.href = 'cifrador.html';">Cifrador César</button></center>
+    <strong><p>Si haces click en el siguiente boton, podrás acceder a nuestro cifrador/descifrador César. Con el podras cibrar textos, palabras, nombres, etc.</p></strong>
+    <center><button class="button" onclick="window.location.href = 'cifrador.html';">Cifrador César</button></center>
+    <br>
 </body>
 </html>
