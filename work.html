@@ -104,7 +104,7 @@
             const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
             // Actualizar el elemento HTML con la cuenta regresiva
-            document.getElementById('cuenta-regresiva').innerHTML = `Faltan: ${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
+            document.getElementById('cuenta-regresiva').innerHTML = `Faltan: ${dias} día(s), ${horas} hora(s), ${minutos} minuto(s), ${segundos} segundo(s)`;
 
             // Calcular los días hábiles restantes (sin contar los fines de semana)
             const fechaActual = new Date();
