@@ -9,7 +9,8 @@
 </head>
 <style>
     h1 {
-        font-family: 'Courier New', Courier, monospace; 
+        font-family: 'Courier New', Courier, monospace;
+        color: rgb(0, 255, 76); 
     }
     p {
         font-family: 'Courier New', Courier, monospace;
@@ -17,6 +18,7 @@
         font-size: 105%;
         letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
         word-spacing: 2px; /* Ajusta el espaciado entre palabras */
+        color: rgb(0, 255, 76);
     }
     pp {
         font-family: Arial, sans-serif;
@@ -31,14 +33,23 @@
         font-family: 'Courier New', Courier, monospace;
         font-size: 24px;
         margin-top: 20px;
-        color: rgb(255, 0, 0);
+        color: rgb(157, 255, 0);
     }
     .dias-habiles {
         text-align: center;
         font-family: 'Courier New', Courier, monospace;
         margin-top: 10px;
-        color: rgb(255, 0, 0);
+        color: rgb(157, 255, 0);
         font-size: 115%;
+    }
+
+    strong {
+        font-family: 'Courier New', Courier, monospace;
+        text-align: justify;
+        font-size: 105%;
+        letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
+        word-spacing: 2px; /* Ajusta el espaciado entre palabras */
+        color: rgb(0, 255, 76);
     }
 </style>
 <body>
@@ -104,5 +115,7 @@
         // Llamar a la función para calcular la cuenta regresiva cuando se cargue la página
         window.onload = actualizarCuentaRegresiva;
     </script>
+    <strong><p>Si haces click en el siguiente boton, podrás acceder a nuestro cifrador/descifrador César. Con el podras cibrar textos, palabras, nombres, etc.</p></strong>
+    <button onclick="window.location.href = 'cifrador.html';">Cifrador César</button>
 </body>
 </html>
