@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrador Cesar</title>
+    <link rel="icon" type="image/png" href="Porsche-930.png">
+    <link href="08189.css" rel="stylesheet "/>
+</head>
+<style>
+    h1{
+        font-family: 'Courier New', Courier, monospace;
+        color: rgb(0, 255, 76); 
+    }
+    p {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
+    font-size: 105%;
+    letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
+    word-spacing: 2px; /* Ajusta el espaciado entre palabras */
+    color: rgb(0, 255, 76);
+    }
+    pp{
+        font-family: Arial, sans-serif;
+        text-align: center;
+        size: 5px;
+    }
+    ul{
+        font-family: 'Courier New', Courier, monospace;
+    }
+</style>
+<body>
+    <nav>
+        <!-- Barra de navegación -->
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="work.html">Trabajo</a></li>
+            <li><a href="info.html">Acerca de</a></li>
+            <!-- Otros elementos de navegación -->
+        </ul>
+    </nav>
+    <main>
+        <center><h1>Cifrador Cesar.</h1></center>
+        <form id="cifrador" autocomplete="off">
+            <input id="input-original" spellcheck="false" placeholder="Ingrese el texto" type="text" name="text">
+        </form>
+        <div class="rango">
+            <input id="rango" type="range" value="1" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
+            <output>1</output>
+        </div>
+        <button onclick="cifrar()">Cifrar</button>
+        <button onclick="descifrar()">Descifrar</button>
+        <div id="resultado"></div>
+    </main>
+
+    <script>
+        function cifrar() {
+            var texto = document.getElementById("input-original").value;
+            var desplazamiento = parseInt(document.getElementById("rango").value);
+            document.getElementById("resultado").innerText = cifrarTexto(texto, desplazamiento);
+        }
+
+        function descifrar() {
+            var texto = document.getElementById("input-original").value;
+            var desplazamiento = parseInt(document.getElementById("rango").value);
+            // Para descifrar, invertimos el desplazamiento
+            document.getElementById("resultado").innerText = cifrarTexto(texto, -desplazamiento);
+        }
+
+        function cifrarTexto(texto, desplazamiento) {
+            var resultado = "";
+            for (var i = 0; i < texto.length; i++) {
+                var charCode = texto.charCodeAt(i);
+                if (charCode >= 65 && charCode <= 90) {
+                    resultado += String.fromCharCode(((charCode - 65 + desplazamiento) % 26) + 65);
+                } else if (charCode >= 97 && charCode <= 122) {
+                    resultado += String.fromCharCode(((charCode - 97 + desplazamiento) % 26) + 97);
+                } else {
+                    resultado += texto.charAt(i);
+                }
+            }
+            return resultado;
+        }
+    </script>
+    <footer>
+        <!-- Pie de página -->
+        <pp>Derechos de autor &copy; 2024</pp>
+        <br>
+        <pp>Isaac Pérez Rodríguez & 08189 Systems Corp.</pp>
+    </footer>
+</body>
+</html>
