@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('Porsche\ 911\ GT3\ RS.jpg') no-repeat center center fixed; /* Fondo con imagen */
+    background: url('1.jpg') no-repeat center center fixed; /* Fondo con imagen */
     background-size: cover; /* Ajuste de la imagen para cubrir toda la pantalla */
     color: #333;
 }
