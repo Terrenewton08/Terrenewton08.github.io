@@ -14,12 +14,12 @@
         color: rgb(0, 255, 76); 
     }
     p {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: justify;
-    font-size: 105%;
-    letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
-    word-spacing: 2px; /* Ajusta el espaciado entre palabras */
-    color: rgb(0, 255, 76);
+        font-family: 'Courier New', Courier, monospace;
+        text-align: justify;
+        font-size: 105%;
+        letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
+        word-spacing: 2px; /* Ajusta el espaciado entre palabras */
+        color: rgb(0, 255, 76);
     }
     pp{
         font-family: Arial, sans-serif;
@@ -28,6 +28,41 @@
     }
     ul{
         font-family: 'Courier New', Courier, monospace;
+    }
+    strong {
+        font-family: 'Courier New', Courier, monospace;
+        text-align: justify;
+        font-size: 105%;
+        letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
+        word-spacing: 2px; /* Ajusta el espaciado entre palabras */
+        color: rgb(0, 255, 76);
+    }
+    main {
+        text-align: center; /* Centra el contenido del cifrador */
+    }
+    .rango {
+        color: rgb(0, 255, 76); /* Color del rango */
+    }
+    #resultado {
+        color: rgb(0, 255, 76); /* Color del resultado */
+        font-size: 20px; /* Tamaño de fuente del resultado */
+        overflow: hidden; /* Oculta el desbordamiento de texto */
+        white-space: nowrap; /* Evita que el texto se divida */
+        border-right: 2px solid transparent; /* Borde inicial transparente */
+        animation: typing 2s steps(40, end) forwards; /* Animación de escritura */
+    }
+    #input-original {
+        font-size: 20px; /* Tamaño de fuente del input */
+    }
+
+    /* Animación de escritura */
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
     }
 </style>
 <body>
@@ -53,7 +88,12 @@
         <button onclick="descifrar()">Descifrar</button>
         <div id="resultado"></div>
     </main>
-
+    <footer>
+        <!-- Pie de página -->
+        <pp>Derechos de autor &copy; 2024</pp>
+        <br>
+        <pp>Isaac Pérez Rodríguez & 08189 Systems Corp.</pp>
+    </footer>
     <script>
         function cifrar() {
             var texto = document.getElementById("input-original").value;
@@ -83,11 +123,6 @@
             return resultado;
         }
     </script>
-    <footer>
-        <!-- Pie de página -->
-        <pp>Derechos de autor &copy; 2024</pp>
-        <br>
-        <pp>Isaac Pérez Rodríguez & 08189 Systems Corp.</pp>
-    </footer>
+    <p>Desde 08189 Systems Corporation, te recomendamos que siempre uses rangos entre 1~5 como máximo, para que al descifrar mensajes, no haya ningún error, ya que el cifrador está en desarrollo, y esta es una versión básica que estamos mejorando.</p>
 </body>
 </html>
