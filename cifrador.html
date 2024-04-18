@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cifrador Cesar</title>
+    <title>08189 Systems Corp.-Cifrador Cesar</title>
     <link rel="icon" type="image/png" href="Porsche-930.png">
     <link href="08189.css" rel="stylesheet "/>
 </head>
@@ -63,6 +63,34 @@
         to {
             width: 100%;
         }
+    }/* Estilo para botones */
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        transition: background-color 0.3s;
+    }
+
+    /* Estilo para botones al pasar el cursor */
+    .btn:hover {
+        background-color: #45a049;
+    }
+
+    /* Estilo para botones secundarios */
+    .btn-secondary {
+        background-color: #008CBA;
+    }
+
+    /* Estilo para botones secundarios al pasar el cursor */
+    .btn-secondary:hover {
+        background-color: #0073e6;
     }
 </style>
 <body>
@@ -84,8 +112,10 @@
             <input id="rango" type="range" value="1" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
             <output>1</output>
         </div>
-        <button onclick="cifrar()">Cifrar</button>
-        <button onclick="descifrar()">Descifrar</button>
+        <!-- Botón primario -->
+        <button class="btn" onclick="cifrar()">Cifrar</button>
+        <!-- Botón secundario -->
+        <button class="btn btn-secondary" onclick="descifrar()">Descifrar</button>
         <div id="resultado"></div>
     </main>
     <footer>
