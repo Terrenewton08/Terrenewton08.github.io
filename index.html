@@ -5,38 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="08189.css">
     <link rel="icon" type="image/png" href="Porsche-930.png">
-    <title>08189 Systems Corp.</title>
+    <title>08189 Systems Corp.-Acerca de</title>   
 </head>
 <style>
     body {
     overflow-y: auto; /* Agregar desplazamiento vertical en dispositivos pequeños */
     }
-    h1 {
+    h1{
         font-family: 'Courier New', Courier, monospace;
-        color: rgb(0, 255, 76);
+        color: rgb(0, 255, 76); 
     }
     p {
-        font-family: 'Courier New', Courier, monospace;
-        text-align: justify;
-        font-size: 105%;
-        letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
-        word-spacing: 2px; /* Ajusta el espaciado entre palabras */
-        color: rgb(0, 255, 76);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
+    font-size: 105%;
+    letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
+    word-spacing: 2px; /* Ajusta el espaciado entre palabras */
+    color: rgb(0, 255, 76);
     }
-    pp {
+    pp{
         font-family: Arial, sans-serif;
         text-align: center;
         size: 5px;
     }
-    ul {
+    ul{
         font-family: 'Courier New', Courier, monospace;
-    }
-    .reloj {
-        text-align: left;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 24px;
-        margin-bottom: 20px;
-        color: rgb(157, 255, 0);
     }
     strong {
         font-family: 'Courier New', Courier, monospace;
@@ -57,37 +50,12 @@
             <!-- Otros elementos de navegación -->
         </ul>
     </nav>
-    <center><h1>¡Bienvenido a 08189 Systems Corporation!</h1></center>
-    <strong><div class="reloj" id="europa">Hora de Europa (Estándar): </div></strong>
-    <strong><div class="reloj" id="asia">Hora de Asia: </div></strong>
-    <strong><div class="reloj" id="america">Hora de América: </div></strong>
-    <strong><div class="reloj" id="londres">Hora de Londres: </div></strong>
-    <script>
-        function actualizarRelojes() {
-            // Obtenemos la hora actual en diferentes zonas horarias
-            const horaEuropa = new Date().toLocaleTimeString('es-ES', { timeZone: 'Europe/Madrid', timeZoneName: 'short' });
-            const horaAsia = new Date().toLocaleTimeString('es-ES', { timeZone: 'Asia/Tokyo', timeZoneName: 'short' });
-            const horaAmerica = new Date().toLocaleTimeString('es-ES', { timeZone: 'America/New_York', timeZoneName: 'short' });
-            const horaLondres = new Date().toLocaleTimeString('es-ES', { timeZone: 'Europe/London', timeZoneName: 'short' });
-
-            // Actualizamos los relojes en la página
-            document.getElementById('europa').textContent = `Hora de Europa (Estándar): ${horaEuropa}`;
-            document.getElementById('asia').textContent = `Hora de Asia: ${horaAsia}`;
-            document.getElementById('america').textContent = `Hora de América: ${horaAmerica}`;
-            document.getElementById('londres').textContent = `Hora de Londres: ${horaLondres}`;
-        }
-
-        // Actualizamos los relojes cada segundo
-        setInterval(actualizarRelojes, 1000);
-
-        // Llamamos a la función para actualizar los relojes cuando la página se carga por primera vez
-        window.onload = actualizarRelojes;
-    </script>
-        <footer>
-            <!-- Pie de página -->
-            <pp>Derechos de autor &copy; 2024</pp>
-            <br>
-            <pp>Isaac Pérez Rodríguez & 08189 Systems Corp.</pp>
-        </footer>
+    <strong><p>Contacta con nosotros para cualquiér cosa, escribiendo un correo a; terrenewton08@gmail.com</p></strong>
+    <footer>
+        <!-- Pie de página -->
+        <pp>Derechos de autor &copy; 2024</pp>
+        <br>
+        <pp>Isaac Pérez Rodríguez & 08189 Systems Corp.</pp>
+    </footer>
 </body>
 </html>
