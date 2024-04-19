@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="08189.css">
     <link rel="icon" type="image/png" href="Porsche-930.png">
-    <title>08189 Systems Corp.-Acerca de</title>   
+    <title>08189 Systems Corp.-Trabajo</title>   
 </head>
 <style>
     body {
@@ -16,20 +16,34 @@
         color: rgb(7, 130, 179);
     }
     p {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: justify;
-    font-size: 105%;
-    letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
-    word-spacing: 2px; /* Ajusta el espaciado entre palabras */
-    color: rgb(23, 164, 189);
+        font-family: 'Courier New', Courier, monospace;
+        text-align: justify;
+        font-size: 105%;
+        letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
+        word-spacing: 2px; /* Ajusta el espaciado entre palabras */
+        color: rgb(23, 164, 189);
     }
-    pp{
+    pp {
         font-family: Arial, sans-serif;
         text-align: center;
         size: 5px;
     }
-    ul{
+    ul {
         font-family: 'Courier New', Courier, monospace;
+    }
+    .cuenta-regresiva {
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 24px;
+        margin-top: 20px;
+        color: rgb(23, 164, 189);
+    }
+    .dias-habiles {
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        margin-top: 10px;
+        color: rgb(23, 164, 189);
+        font-size: 115%;
     }
     strong {
         font-family: 'Courier New', Courier, monospace;
@@ -37,7 +51,25 @@
         font-size: 105%;
         letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
         word-spacing: 2px; /* Ajusta el espaciado entre palabras */
-        color: rgb(23, 164, 189);
+        color: rgb(0, 217, 255);
+    }
+    /* Estilo para el botón */
+    .button {
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        border-radius: 2.5px;
+        background-color: #3797a8;
+        color: white;
+        transition: background-color 0.3s;
+    }
+    /* Estilo para el botón al pasar el cursor */
+    .button:hover {
+    background-color: rgba(0, 217, 255, 0.808);
     }
 </style>
 <body>
@@ -50,7 +82,55 @@
             <!-- Otros elementos de navegación -->
         </ul>
     </nav>
-    <strong><p>Contacta con nosotros para cualquiér cosa, escribiendo un correo a; terrenewton08@gmail.com</p></strong>
+    <strong><p>En 08189 Systems Corp. trabajamos en el desarrollo de nuevas herramientas de trabajo del ámbito digital. Colaboramos con otras empresas, y negocios.</p></strong>
+    <strong><p>A continuación tenemos un ejemplo de una cuenta regresiva con diferentes estilos. Esta cuenta regresiva, tiene como fecha final el viernes 21 de junio de este año 2024, día en que las clases de la mayoría de escuelas de Catalunya, España acaban el curso 2023-24.</p></strong>
+    <div class="cuenta-regresiva" id="cuenta-regresiva"></div>
+    <div class="dias-habiles" id="dias-habiles"></div>
+    <strong><p>Si haces click en el siguiente boton, podrás acceder a nuestro cifrador/descifrador César. Con el podras cibrar textos, palabras, nombres, etc.</p></strong>
+    <center><button class="button" onclick="window.location.href = 'cifrador.html';">Cifrador César</button></center>
+    <script>
+        // Función para calcular la cuenta regresiva y actualizar la página
+        function actualizarCuentaRegresiva() {
+            // Definir la fecha objetivo (21 de junio de 2024)
+            const fechaObjetivo = new Date('June 21, 2024 00:00:00').getTime();
+
+            // Obtener la fecha actual
+            const ahora = new Date().getTime();
+
+            // Calcular la diferencia de tiempo entre la fecha objetivo y la fecha actual
+            const diferencia = fechaObjetivo - ahora;
+
+            // Calcular los días, horas, minutos y segundos restantes
+            const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+            // Actualizar el elemento HTML con la cuenta regresiva
+            document.getElementById('cuenta-regresiva').innerHTML = `Faltan: ${dias} día(s), ${horas} hora(s), ${minutos} minuto(s), ${segundos} segundo(s)`;
+
+            // Calcular los días hábiles restantes (sin contar los fines de semana)
+            const fechaActual = new Date();
+            let diasHabiles = 0;
+            for (let i = 1; i <= dias; i++) {
+                // Verificar si el día actual es un día hábil (de lunes a viernes)
+                if (fechaActual.getDay() !== 0 && fechaActual.getDay() !== 6) {
+                    diasHabiles++;
+                }
+                // Avanzar al siguiente día
+                fechaActual.setDate(fechaActual.getDate() + 1);
+            }
+
+            // Actualizar el elemento HTML con los días hábiles restantes
+            document.getElementById('dias-habiles').innerHTML = `Faltan ${diasHabiles} día(s) hábiles para el 21/6/2024`;
+        }
+
+        // Actualizar la cuenta regresiva cada segundo
+        setInterval(actualizarCuentaRegresiva, 1000);
+
+        // Llamar a la función para calcular la cuenta regresiva cuando se cargue la página
+        window.onload = actualizarCuentaRegresiva;
+    </script>
     <footer>
         <!-- Pie de página -->
         <pp>Derechos de autor &copy; 2024</pp>
