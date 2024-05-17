@@ -47,7 +47,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ffd700;
+    color: #068ab3; /* Color de la lletra de la barra de navegació al passar el cursor */
 }
 
 /* Estilos de contenido principal */
